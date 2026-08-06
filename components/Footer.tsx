@@ -2,7 +2,7 @@
 
 import { useLang } from "@/lib/i18n";
 import { profile } from "@/lib/config";
-import { GithubIcon, LinkedinIcon, MailIcon, BoltIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, MailIcon } from "./icons";
 
 export function Footer() {
   const { t } = useLang();
@@ -11,8 +11,8 @@ export function Footer() {
     <footer className="border-t border-line bg-panel/40">
       <div className="container-x flex flex-col items-center gap-6 py-12 sm:flex-row sm:justify-between">
         <div className="flex items-center gap-2.5">
-          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-pitch/40 bg-panel text-pitch">
-            <BoltIcon className="h-4 w-4" />
+          <span className="flex h-8 w-8 items-center justify-center rounded-lg border border-pitch/40 bg-panel font-mono text-sm font-bold text-pitch">
+            G
           </span>
           <div>
             <p className="font-sans text-sm font-bold text-foreground">{profile.name}</p>

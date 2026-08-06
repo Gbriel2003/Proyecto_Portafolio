@@ -75,7 +75,6 @@ export function About() {
                       onError={() => setImgError(true)}
                       fill
                       className="object-cover"
-                      style={{ imageRendering: "high-quality" }}
                       sizes="(max-width: 640px) 128px, 160px"
                       priority
                     />

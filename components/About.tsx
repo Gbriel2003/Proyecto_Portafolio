@@ -38,7 +38,7 @@ export function About() {
               {t("about.title")}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-muted sm:text-lg">{t("about.p1")}</p>
-            <p className="mt-4 text-base leading-relaxed text-muted sm:text-lg">{t("about.p2")}</p>
+
             <a
               href={profile.resume}
               download

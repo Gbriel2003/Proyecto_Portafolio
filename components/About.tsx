@@ -23,7 +23,7 @@ export function About() {
   return (
     <section id="about" className="relative scroll-mt-24 py-20 sm:py-28">
       <div className="bg-grid-data absolute inset-0 opacity-60" />
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-transparent to-background" />
+      <div className="absolute inset-0 bg-linear-to-b from-background via-transparent to-background" />
 
       <div className="container-x relative z-10">
         <div className="grid items-center gap-14 lg:grid-cols-2">
@@ -79,7 +79,7 @@ export function About() {
                       priority
                     />
                   ) : (
-                    <div className="flex h-full w-full flex-col items-center justify-center bg-gradient-to-br from-panel2 to-panel text-pitch">
+                    <div className="flex h-full w-full flex-col items-center justify-center bg-linear-to-br from-panel2 to-panel text-pitch">
                       <span className="font-sans text-4xl sm:text-5xl font-bold">{profile.firstName.charAt(0)}</span>
                       <span className="font-mono text-[10px] sm:text-xs text-muted mt-2">UNIMAR</span>
                     </div>
@@ -116,7 +116,7 @@ export function About() {
                     whileInView={{ width: "98%" }}
                     viewport={{ once: true }}
                     transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-                    className="h-full rounded-full bg-gradient-to-r from-pitchsoft via-pitch to-data"
+                    className="h-full rounded-full bg-linear-to-r from-pitchsoft via-pitch to-data"
                   />
                 </div>
               </div>

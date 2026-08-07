@@ -22,7 +22,7 @@ export function Education() {
             transition={{ duration: 0.5, delay: i * 0.1 }}
             className="relative pb-12 last:pb-0"
           >
-            <span className="absolute -left-[41px] flex h-5 w-5 items-center justify-center rounded-full border border-pitch/50 bg-background">
+            <span className="absolute -left-10.25 flex h-5 w-5 items-center justify-center rounded-full border border-pitch/50 bg-background">
               <span className="h-2 w-2 rounded-full bg-pitch" />
             </span>
 

@@ -7,7 +7,7 @@ export function AnimatedBackground() {
     <div className="pointer-events-none fixed inset-0 z-[-1] overflow-hidden">
       {/* Aurora Orbs using highly performant radial gradients instead of expensive CSS blur */}
       <motion.div
-        className="absolute -top-[20%] -left-[10%] h-[60vw] w-[60vw] opacity-[0.2] dark:opacity-[0.25] will-change-transform"
+        className="absolute top-[-20%] left-[-10%] h-[60vw] w-[60vw] opacity-[0.2] dark:opacity-[0.25] will-change-transform"
         style={{ background: "radial-gradient(circle, var(--pitch) 0%, transparent 60%)" }}
         animate={{
           x: ["0%", "15%", "-5%", "0%"],
@@ -22,7 +22,7 @@ export function AnimatedBackground() {
       />
       
       <motion.div
-        className="absolute top-[20%] -right-[10%] h-[50vw] w-[50vw] opacity-[0.15] dark:opacity-[0.2] will-change-transform"
+        className="absolute top-[20%] right-[-10%] h-[50vw] w-[50vw] opacity-[0.15] dark:opacity-[0.2] will-change-transform"
         style={{ background: "radial-gradient(circle, var(--data) 0%, transparent 60%)" }}
         animate={{
           x: ["0%", "-20%", "10%", "0%"],
@@ -37,7 +37,7 @@ export function AnimatedBackground() {
       />
 
       <motion.div
-        className="absolute -bottom-[20%] left-[20%] h-[70vw] w-[70vw] opacity-[0.15] dark:opacity-[0.2] will-change-transform"
+        className="absolute bottom-[-20%] left-[20%] h-[70vw] w-[70vw] opacity-[0.15] dark:opacity-[0.2] will-change-transform"
         style={{ background: "radial-gradient(circle, var(--pitchsoft) 0%, transparent 60%)" }}
         animate={{
           x: ["0%", "25%", "-15%", "0%"],

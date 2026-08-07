@@ -60,7 +60,7 @@ export function Hero() {
       <div className="bg-grid absolute inset-0" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_30%_20%,rgb(var(--glow)/0.05),transparent)]" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_50%_at_80%_70%,rgb(var(--glow)/0.03),transparent)]" />
-      <div className="pointer-events-none absolute -right-40 top-1/3 hidden h-[32rem] w-[32rem] animate-spin-slow rounded-full border border-line lg:block">
+      <div className="pointer-events-none absolute -right-40 top-1/3 hidden h-128 w-lg animate-spin-slow rounded-full border border-line lg:block">
         <div className="absolute -top-1 left-1/2 h-2 w-2 -translate-x-1/2 rounded-full bg-pitch" />
       </div>
       <div className="pointer-events-none absolute -right-24 top-1/3 hidden h-64 w-64 rounded-full border border-line lg:block" />
@@ -96,7 +96,7 @@ export function Hero() {
 
             <motion.div variants={fadeUp} className="mt-4 flex h-10 items-center font-sans text-xl font-semibold text-data sm:text-2xl">
               <span>{typed}</span>
-              <span className="ml-1 h-7 w-[3px] animate-blink bg-data" />
+              <span className="ml-1 h-7 w-0.75 animate-blink bg-data" />
             </motion.div>
 
             <motion.p variants={fadeUp} className="mt-5 max-w-xl text-base leading-relaxed text-muted sm:text-lg">
@@ -193,7 +193,7 @@ export function Hero() {
                 <p className="text-pitch">{t("hero.termDeploy")}</p>
                 <p className="flex items-center">
                   <span className="text-pitch">➜ ~</span>
-                  <span className="ml-2 inline-block h-4 w-[2px] animate-blink bg-pitch" />
+                  <span className="ml-2 inline-block h-4 w-0.5 animate-blink bg-pitch" />
                 </p>
               </div>
 
@@ -225,7 +225,7 @@ export function Hero() {
 
       <div className="absolute bottom-6 left-1/2 hidden -translate-x-1/2 flex-col items-center gap-2 text-muted lg:flex">
         <span className="font-mono text-[11px] uppercase tracking-[0.3em]">{t("hero.scroll")}</span>
-        <span className="h-10 w-px animate-live bg-gradient-to-b from-pitch to-transparent" />
+        <span className="h-10 w-px animate-live bg-linear-to-b from-pitch to-transparent" />
       </div>
 
       <AnimatePresence>

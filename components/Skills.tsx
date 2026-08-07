@@ -31,7 +31,7 @@ const marqueeSkills = [...allSkills, ...allSkills, ...allSkills, ...allSkills];
 
 export function Skills() {
   return (
-    <section id="skills" className="relative flex min-h-[600px] flex-col items-center justify-center overflow-hidden py-24">
+    <section id="skills" className="relative flex min-h-150 flex-col items-center justify-center overflow-hidden py-24">
       {/* Network Map Background */}
       <div className="bg-grid absolute inset-0 opacity-40" />
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,var(--color-background)_80%)]" />
@@ -72,8 +72,8 @@ export function Skills() {
         className="relative w-full overflow-hidden bg-white/5 backdrop-blur-2xl shadow-[0_0_50px_-12px_rgb(var(--glow)/0.3)] z-10"
       >
         {/* Subtle luminous vertical borders at the edges of the screen */}
-        <div className="absolute inset-y-0 left-0 w-[2px] bg-gradient-to-b from-transparent via-pitch/70 to-transparent z-20" />
-        <div className="absolute inset-y-0 right-0 w-[2px] bg-gradient-to-b from-transparent via-pitch/70 to-transparent z-20" />
+        <div className="absolute inset-y-0 left-0 w-0.5 bg-linear-to-b from-transparent via-pitch/70 to-transparent z-20" />
+        <div className="absolute inset-y-0 right-0 w-0.5 bg-linear-to-b from-transparent via-pitch/70 to-transparent z-20" />
 
           {/* Marquee Content */}
           <div className="marquee-mask flex flex-col gap-10 py-16">

@@ -203,7 +203,7 @@ export function Hero() {
                 </span>
                 <div className="flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-pitch" />
-                  <span className="font-mono text-[11px] text-pitch">UNIMAR ENGINEER · ALL SYSTEMS GO</span>
+                  <span className="font-mono text-[11px] text-pitch">ALL SYSTEMS GO</span>
                 </div>
               </div>
 

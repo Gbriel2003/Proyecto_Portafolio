@@ -19,14 +19,14 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : "http://localhost:3000"
   ),
-  title: `${profile.name} · Ingeniero de Sistemas & Senior Fullstack Developer`,
+  title: `${profile.name} · Ingeniero de Sistemas & Desarrollador de Software`,
   description:
-    "Ingeniero de Sistemas egresado de UNIMAR. Desarrollador Fullstack creando aplicaciones web escalables, apps móviles, integraciones con IA y arquitectura en tiempo real.",
+    "Ingeniero de Sistemas egresado de UNIMAR. Desarrollador de software creando aplicaciones web escalables, apps móviles, integraciones con IA y arquitectura en tiempo real.",
   keywords: [
     "Gabriel Cardona",
     "Ingeniero de Sistemas",
     "UNIMAR",
-    "Fullstack Developer",
+    "Software Developer",
     "React",
     "FastAPI",
     "Python",
@@ -39,8 +39,8 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: profile.name, url: profile.github }],
   openGraph: {
-    title: `${profile.name} · Ingeniero de Sistemas & Fullstack Developer`,
-    description: "Ingeniería de software fullstack, desarrollo web, móvil, IA y sistemas en tiempo real.",
+    title: `${profile.name} · Ingeniero de Sistemas & Desarrollador de Software`,
+    description: "Ingeniería de software, desarrollo web, móvil, IA y sistemas en tiempo real.",
     url: "/",
     siteName: profile.name,
     images: [
@@ -56,7 +56,7 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: `${profile.name} · Ingeniero de Sistemas`,
-    description: "Ingeniería de software fullstack, desarrollo web, móvil, IA y sistemas en tiempo real.",
+    description: "Ingeniería de software, desarrollo web, móvil, IA y sistemas en tiempo real.",
     creator: "@gabrielcardona", // Replace with your actual handle if applicable
     images: ["/avatar.jpg"],
   },

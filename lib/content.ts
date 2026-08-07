@@ -96,7 +96,7 @@ export const education: Record<Lang, EducationItem[]> = {
       logo: "/unimar.png",
       points: [
         "Degree Thesis: Designed and built an AI-powered futsal team management web platform.",
-        "Core coursework focused on software architecture, fullstack development, database design, and intelligent systems.",
+        "Core coursework focused on software architecture, web development, database design, and intelligent systems.",
       ],
     },
   ],
@@ -108,7 +108,7 @@ export const education: Record<Lang, EducationItem[]> = {
       logo: "/unimar.png",
       points: [
         "Tesis de Grado: Diseño y desarrollo de plataforma web de gestión deportiva con inteligencia artificial para un equipo de fútbol sala.",
-        "Enfoque académico en arquitectura de software, desarrollo fullstack, diseño de bases de datos y sistemas inteligentes.",
+        "Enfoque académico en arquitectura de software, desarrollo web, diseño de bases de datos y sistemas inteligentes.",
       ],
     },
   ],

@@ -13,11 +13,11 @@ const en = {
   "hero.titleA": "I build",
   "hero.titleB": "high-impact web software.",
   "hero.intro":
-    "Systems Engineer & Senior Fullstack Developer. I craft scalable web platforms, mobile apps, real-time architectures and AI integrations — from robust APIs to high-performance UIs.",
+    "Systems Engineer & Software Developer. I craft scalable web platforms, mobile apps, real-time architectures and AI integrations — from robust APIs to high-performance UIs.",
   "hero.ctaProjects": "View projects",
   "hero.ctaContact": "Contact me",
   "hero.termTitle": "gabriel@unimar: ~/portfolio",
-  "hero.termWhoami": "gabriel · systems-engineer · fullstack",
+  "hero.termWhoami": "gabriel · systems-engineer · software-developer",
   "hero.termStack": "React · Next.js · FastAPI · Python · Node · Docker",
   "hero.termFetch": "Running AI analytics pipeline…",
   "hero.termStream": "Streaming real-time events over WebSocket",
@@ -25,9 +25,9 @@ const en = {
   "hero.scroll": "scroll to explore",
 
   "about.tag": "about me",
-  "about.title": "Systems Engineer & Fullstack Builder",
+  "about.title": "Systems Engineer & Software Developer",
   "about.p1":
-    "I am a Systems Engineer graduated from Universidad de Margarita (UNIMAR). As a Fullstack Developer, I specialize in building end-to-end web applications, mobile apps, REST/GraphQL APIs, and AI integrations designed for performance and scale.",
+    "I am a Systems Engineer graduated from Universidad de Margarita (UNIMAR). As a Software Developer, I specialize in building end-to-end web applications, mobile apps, REST/GraphQL APIs, and AI integrations designed for performance and scale.",
   "about.p2":
     "For my university thesis, I engineered an AI-powered sports management platform for a futsal team, built with React, Python (FastAPI), PostgreSQL, and Docker containerization. I bring deep technical versatility across frontend, backend, databases, cloud, and specialized real-time software.",
   "about.cardPos": "degree",
@@ -47,7 +47,7 @@ const en = {
 
   "skills.tag": "skills",
   "skills.title": "Technical playbook & stack",
-  "skills.subtitle": "Fullstack software engineering capabilities, mobile development, AI integration, and real-time domain platforms.",
+  "skills.subtitle": "Software engineering capabilities, web development, AI integration, and real-time domain platforms.",
   "skills.frontend": "Frontend Development",
   "skills.frontendDesc": "Modern, interactive & responsive web UIs",
   "skills.backend": "Backend, APIs & AI",
@@ -61,7 +61,7 @@ const en = {
   "projects.title": "Featured engineering work",
   "projects.subtitle": "A showcase of web applications, AI platforms, thesis work, and real-time software.",
   "projects.sportsBadge": "AI & Sports",
-  "projects.fullstackBadge": "Fullstack",
+  "projects.fullstackBadge": "Web",
   "projects.demo": "Live demo",
   "projects.code": "Source code",
   "projects.viewAll": "See all on GitHub",
@@ -79,7 +79,7 @@ const en = {
 
   "contact.tag": "contact",
   "contact.title": "Let's build something great",
-  "contact.subtitle": "Looking for a Systems Engineer, Fullstack Developer, or AI/Web solutions? My inbox is open.",
+  "contact.subtitle": "Looking for a Systems Engineer, Software Developer, or AI/Web solutions? My inbox is open.",
   "contact.name": "Name",
   "contact.email": "Email",
   "contact.message": "Message",
@@ -112,11 +112,11 @@ const es: Record<TKey, string> = {
   "hero.titleA": "Construyo",
   "hero.titleB": "software web de alto impacto.",
   "hero.intro":
-    "Ingeniero de Sistemas y Desarrollador Fullstack. Diseño plataformas web escalables, apps móviles, arquitecturas en tiempo real e integraciones de IA — desde APIs robustas hasta interfaces de alto rendimiento.",
+    "Ingeniero de Sistemas y Desarrollador de Software. Diseño plataformas web escalables, apps móviles, arquitecturas en tiempo real e integraciones de IA — desde APIs robustas hasta interfaces de alto rendimiento.",
   "hero.ctaProjects": "Ver proyectos",
   "hero.ctaContact": "Contáctame",
   "hero.termTitle": "gabriel@unimar: ~/portafolio",
-  "hero.termWhoami": "gabriel · ingeniero-de-sistemas · fullstack",
+  "hero.termWhoami": "gabriel · ingeniero-de-sistemas · desarrollador-de-software",
   "hero.termStack": "React · Next.js · FastAPI · Python · Node · Docker",
   "hero.termFetch": "Ejecutando pipeline de analítica e IA…",
   "hero.termStream": "Transmitiendo eventos en vivo vía WebSocket",
@@ -124,9 +124,9 @@ const es: Record<TKey, string> = {
   "hero.scroll": "desplázate para explorar",
 
   "about.tag": "sobre mí",
-  "about.title": "Ingeniero de Sistemas & Desarrollador Fullstack",
+  "about.title": "Ingeniero de Sistemas & Desarrollador de Software",
   "about.p1":
-    "Soy Ingeniero de Sistemas egresado de la Universidad de Margarita (UNIMAR). Como desarrollador Fullstack, me especializo en construir aplicaciones web integrales, aplicaciones móviles, APIs REST/GraphQL y soluciones con inteligencia artificial diseñadas para escalar.",
+    "Soy Ingeniero de Sistemas egresado de la Universidad de Margarita (UNIMAR). Como desarrollador de software, me especializo en construir aplicaciones web integrales, aplicaciones móviles, APIs REST/GraphQL y soluciones con inteligencia artificial diseñadas para escalar.",
   "about.p2":
     "Para mi tesis de grado desarrollé una plataforma web de gestión deportiva para un equipo de fútbol sala con integración de IA, construida con React, Python (FastAPI), PostgreSQL y contenedores Docker. Poseo una versatilidad técnica sólida que abarca frontend, backend, bases de datos, despliegue en la nube y software en tiempo real.",
   "about.cardPos": "título",
@@ -146,7 +146,7 @@ const es: Record<TKey, string> = {
 
   "skills.tag": "habilidades",
   "skills.title": "Mi stack e ingeniería",
-  "skills.subtitle": "Capacidades de ingeniería de software fullstack, desarrollo móvil, integración de inteligencia artificial y plataformas en tiempo real.",
+  "skills.subtitle": "Capacidades de ingeniería de software, desarrollo web y móvil, integración de inteligencia artificial y plataformas en tiempo real.",
   "skills.frontend": "Desarrollo Frontend",
   "skills.frontendDesc": "Interfaces web modernas, interactivas y responsive",
   "skills.backend": "Backend, APIs e IA",
@@ -160,7 +160,7 @@ const es: Record<TKey, string> = {
   "projects.title": "Trabajos e ingeniería destacada",
   "projects.subtitle": "Una muestra de aplicaciones web, plataformas con IA, proyecto de tesis y software en tiempo real.",
   "projects.sportsBadge": "IA & Deporte",
-  "projects.fullstackBadge": "Fullstack",
+  "projects.fullstackBadge": "Web",
   "projects.demo": "Demo en vivo",
   "projects.code": "Código fuente",
   "projects.viewAll": "Ver todos en GitHub",
@@ -178,7 +178,7 @@ const es: Record<TKey, string> = {
 
   "contact.tag": "contacto",
   "contact.title": "Construyamos algo grande",
-  "contact.subtitle": "¿Buscas un Ingeniero de Sistemas, Desarrollador Fullstack o soluciones Web/IA? Mi bandeja está abierta.",
+  "contact.subtitle": "¿Buscas un Ingeniero de Sistemas, Desarrollador de Software o soluciones Web/IA? Mi bandeja está abierta.",
   "contact.name": "Nombre",
   "contact.email": "Email",
   "contact.message": "Mensaje",

@@ -2,8 +2,8 @@ export const profile = {
   name: "Gabriel Cardona",
   firstName: "Gabriel",
   title: {
-    en: "Systems Engineer & Senior Fullstack Developer",
-    es: "Ingeniero de Sistemas & Desarrollador Fullstack",
+    en: "Systems Engineer & Software Developer",
+    es: "Ingeniero de Sistemas & Desarrollador de Software",
   },
   education: {
     en: "Systems Engineering Graduate · Universidad de Margarita (UNIMAR)",
@@ -13,13 +13,13 @@ export const profile = {
   roles: {
     en: [
       "Systems Engineer",
-      "Fullstack Web & Mobile Developer",
+      "Software Developer",
       "FastAPI + React + Docker Specialist",
       "AI & Real-Time Systems Builder",
     ],
     es: [
       "Ingeniero de Sistemas",
-      "Desarrollador Fullstack Web & Móvil",
+      "Desarrollador de Software Web & Móvil",
       "Especialista React + FastAPI + Docker",
       "Desarrollador de Sistemas con IA y Tiempo Real",
     ],

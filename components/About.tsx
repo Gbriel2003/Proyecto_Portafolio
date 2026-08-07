@@ -107,7 +107,7 @@ export function About() {
 
               <div className="px-5 pb-5 pt-2">
                 <div className="mb-2 flex items-center justify-between font-mono text-xs text-muted">
-                  <span>systems & fullstack score</span>
+                  <span>systems & software score</span>
                   <span className="text-pitch">98 / 100</span>
                 </div>
                 <div className="h-2 overflow-hidden rounded-full bg-panel2">

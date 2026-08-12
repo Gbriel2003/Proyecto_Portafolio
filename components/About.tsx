@@ -105,22 +105,6 @@ export function About() {
                 ))}
               </div>
 
-              <div className="px-5 pb-5 pt-2">
-                <div className="mb-2 flex items-center justify-between font-mono text-xs text-muted">
-                  <span>systems & software score</span>
-                  <span className="text-pitch">98 / 100</span>
-                </div>
-                <div className="h-2 overflow-hidden rounded-full bg-panel2">
-                  <motion.div
-                    initial={{ width: 0 }}
-                    whileInView={{ width: "98%" }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.2, delay: 0.3, ease: "easeOut" }}
-                    className="h-full rounded-full bg-linear-to-r from-pitchsoft via-pitch to-data"
-                  />
-                </div>
-              </div>
-
               <span className="pointer-events-none absolute -left-3 -top-3 h-6 w-6 border-l-2 border-t-2 border-data" />
               <span className="pointer-events-none absolute -bottom-3 -right-3 h-6 w-6 border-b-2 border-r-2 border-pitch" />
             </div>

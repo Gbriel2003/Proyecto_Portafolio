@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { 
   SiReact, SiTypescript, SiTailwindcss,
-  SiFastapi, SiNodedotjs, SiPostgresql, SiRedis,
+  SiFastapi, SiNodedotjs, SiPostgresql,
   SiDocker, SiGit, SiFlutter
 } from "react-icons/si";
 import { TbPlugConnected } from "react-icons/tb";
@@ -18,7 +18,6 @@ const allSkills = [
   { name: "FastAPI", Icon: SiFastapi, color: "#009688" },
   { name: "Node.js", Icon: SiNodedotjs, color: "#339933" },
   { name: "PostgreSQL", Icon: SiPostgresql, color: "#4169E1" },
-  { name: "Redis", Icon: SiRedis, color: "#DC382D" },
   { name: "Docker", Icon: SiDocker, color: "#2496ED" },
   { name: "AWS", Icon: AwsIcon, color: "" },
   { name: "WebSockets", Icon: TbPlugConnected, color: "var(--color-foreground)" }, 
@@ -82,7 +81,7 @@ export function Skills() {
             <div className="flex w-max animate-marquee gap-14 pl-14 hover:[animation-play-state:paused]">
               {marqueeSkills.map((tech, idx) => (
                 <div key={`r1-${idx}`} className="group flex flex-col items-center gap-4 transition-transform hover:scale-110 cursor-default">
-                  <tech.Icon className="h-14 w-14 drop-shadow-md transition-all group-hover:drop-shadow-[0_0_15px_currentColor]" style={{ color: tech.color }} />
+                  <tech.Icon aria-hidden="true" focusable="false" className="h-14 w-14 drop-shadow-md transition-all group-hover:drop-shadow-[0_0_15px_currentColor]" style={{ color: tech.color }} />
                   <span className="font-mono text-xs font-medium tracking-wide text-muted transition-colors group-hover:text-foreground">{tech.name}</span>
                 </div>
               ))}
@@ -92,7 +91,7 @@ export function Skills() {
             <div className="flex w-max animate-marquee gap-14 pl-14 hover:[animation-play-state:paused]" style={{ animationDirection: "reverse" }}>
               {marqueeSkills.slice().reverse().map((tech, idx) => (
                 <div key={`r2-${idx}`} className="group flex flex-col items-center gap-4 transition-transform hover:scale-110 cursor-default">
-                  <tech.Icon className="h-14 w-14 drop-shadow-md transition-all group-hover:drop-shadow-[0_0_15px_currentColor]" style={{ color: tech.color }} />
+                  <tech.Icon aria-hidden="true" focusable="false" className="h-14 w-14 drop-shadow-md transition-all group-hover:drop-shadow-[0_0_15px_currentColor]" style={{ color: tech.color }} />
                   <span className="font-mono text-xs font-medium tracking-wide text-muted transition-colors group-hover:text-foreground">{tech.name}</span>
                 </div>
               ))}

@@ -1,5 +1,7 @@
 interface IconProps {
   className?: string;
+  "aria-hidden"?: boolean | "true" | "false";
+  focusable?: boolean | string;
 }
 
 export function GithubIcon({ className }: IconProps) {

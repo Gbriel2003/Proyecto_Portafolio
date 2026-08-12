@@ -38,7 +38,7 @@ export const projects: Record<Lang, Project[]> = {
       name: "Project 3 (Demo)",
       description:
         "Description of your third project. Highlight your architecture, real-time features, or any specific integrations.",
-      tags: ["Node.js", "WebSockets", "Redis"],
+      tags: ["Node.js", "WebSockets"],
       category: "fullstack",
       accent: "pitch",
       demo: "#",
@@ -70,7 +70,7 @@ export const projects: Record<Lang, Project[]> = {
       name: "Proyecto 3 (Demo)",
       description:
         "Descripción de tu tercer proyecto. Destaca tu arquitectura, características en tiempo real o integraciones específicas.",
-      tags: ["Node.js", "WebSockets", "Redis"],
+      tags: ["Node.js", "WebSockets"],
       category: "fullstack",
       accent: "pitch",
       demo: "#",

@@ -27,7 +27,7 @@ const en = {
   "about.tag": "about me",
   "about.title": "Systems Engineer & Software Developer",
   "about.p1":
-    "I am a Systems Engineer graduated from Universidad de Margarita (UNIMAR). As a Software Developer, I specialize in building end-to-end web applications, mobile apps, REST/GraphQL APIs, and AI integrations designed for performance and scale.",
+    "I am a Systems Engineer graduated from Universidad de Margarita (UNIMAR). As a Software Developer, I specialize in building end-to-end web applications, mobile apps, REST APIs, and AI integrations designed for performance and scale.",
   "about.p2":
     "For my university thesis, I engineered an AI-powered sports management platform for a futsal team, built with React, Python (FastAPI), PostgreSQL, and Docker containerization. I bring deep technical versatility across frontend, backend, databases, cloud, and specialized real-time software.",
   "about.cardPos": "degree",
@@ -126,7 +126,7 @@ const es: Record<TKey, string> = {
   "about.tag": "sobre mí",
   "about.title": "Ingeniero de Sistemas & Desarrollador de Software",
   "about.p1":
-    "Soy Ingeniero de Sistemas egresado de la Universidad de Margarita (UNIMAR). Como desarrollador de software, me especializo en construir aplicaciones web integrales, aplicaciones móviles, APIs REST/GraphQL y soluciones con inteligencia artificial diseñadas para escalar.",
+    "Soy Ingeniero de Sistemas egresado de la Universidad de Margarita (UNIMAR). Como desarrollador de software, me especializo en construir aplicaciones web integrales, aplicaciones móviles, APIs REST y soluciones con inteligencia artificial diseñadas para escalar.",
   "about.p2":
     "Para mi tesis de grado desarrollé una plataforma web de gestión deportiva para un equipo de fútbol sala con integración de IA, construida con React, Python (FastAPI), PostgreSQL y contenedores Docker. Poseo una versatilidad técnica sólida que abarca frontend, backend, bases de datos, despliegue en la nube y software en tiempo real.",
   "about.cardPos": "título",

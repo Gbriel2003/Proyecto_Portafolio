@@ -15,13 +15,8 @@ interface LegalModalProps {
 
 export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalModalProps) {
   const { t, lang } = useLang();
-  const [activeTab, setActiveTab] = useState<LegalTab>(initialTab);
-  const [prevInitialTab, setPrevInitialTab] = useState<LegalTab>(initialTab);
-
-  if (prevInitialTab !== initialTab) {
-    setPrevInitialTab(initialTab);
-    setActiveTab(initialTab);
-  }
+  const [selectedTab, setSelectedTab] = useState<LegalTab | null>(null);
+  const activeTab = selectedTab ?? initialTab;
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -41,6 +36,11 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
     };
   }, [isOpen, onClose]);
 
+  const handleClose = () => {
+    setSelectedTab(null);
+    onClose();
+  };
+
   const isEs = lang === "es";
 
   return (
@@ -57,7 +57,7 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            onClick={onClose}
+            onClick={handleClose}
             className="fixed inset-0 bg-background/80 backdrop-blur-md"
           />
 
@@ -79,7 +79,7 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
               </div>
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleClose}
                 aria-label={t("legal.close")}
                 className="rounded-lg p-1.5 text-muted transition-colors hover:bg-panel2 hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pitch"
               >
@@ -93,7 +93,7 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
             <div className="flex border-b border-line bg-panel2/50 px-6">
               <button
                 type="button"
-                onClick={() => setActiveTab("privacy")}
+                onClick={() => setSelectedTab("privacy")}
                 className={`py-3 text-xs sm:text-sm font-mono font-medium transition-colors border-b-2 mr-6 ${
                   activeTab === "privacy"
                     ? "border-pitch text-pitch"
@@ -104,7 +104,7 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
               </button>
               <button
                 type="button"
-                onClick={() => setActiveTab("notice")}
+                onClick={() => setSelectedTab("notice")}
                 className={`py-3 text-xs sm:text-sm font-mono font-medium transition-colors border-b-2 mr-6 ${
                   activeTab === "notice"
                     ? "border-pitch text-pitch"
@@ -115,7 +115,7 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
               </button>
               <button
                 type="button"
-                onClick={() => setActiveTab("cookies")}
+                onClick={() => setSelectedTab("cookies")}
                 className={`py-3 text-xs sm:text-sm font-mono font-medium transition-colors border-b-2 ${
                   activeTab === "cookies"
                     ? "border-pitch text-pitch"
@@ -212,7 +212,7 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
             <div className="flex justify-end border-t border-line bg-panel2/30 px-6 py-3.5">
               <button
                 type="button"
-                onClick={onClose}
+                onClick={handleClose}
                 className="rounded-lg bg-panel border border-line px-4 py-2 font-mono text-xs font-semibold text-foreground transition-colors hover:border-pitch hover:text-pitch focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-pitch"
               >
                 {t("legal.close")}
@@ -224,4 +224,3 @@ export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalMod
     </AnimatePresence>
   );
 }
-

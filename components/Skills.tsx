@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { 
+import {
   SiReact, SiTypescript, SiTailwindcss,
   SiFastapi, SiPostgresql, SiSqlite,
   SiDocker, SiGit, SiExpo, SiNodedotjs
@@ -14,7 +14,7 @@ import { skillGroups } from "@/lib/content";
 const allSkills = [
   { name: "React", Icon: SiReact, color: "#61DAFB" },
   { name: "React Native", Icon: TbBrandReactNative, color: "#61DAFB" },
-  { name: "Next.js", Icon: NextjsIcon, color: "var(--color-foreground)" }, 
+  { name: "Next.js", Icon: NextjsIcon, color: "var(--color-foreground)" },
   { name: "FastAPI", Icon: SiFastapi, color: "#009688" },
   { name: "TypeScript", Icon: SiTypescript, color: "#3178C6" },
   { name: "Python", Icon: PythonIcon, color: "" },

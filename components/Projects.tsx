@@ -124,11 +124,15 @@ function ProjectCard({
                 </div>
               )}
 
-              <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-line/40">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                        }`}
+        <div className="mt-4 flex flex-wrap gap-1.5 pt-3 border-t border-line/40">
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              className={`rounded border border-line bg-panel2/50 px-2 py-0.5 font-mono text-[11px] text-muted transition-colors ${
+                isSports || isMobile
+                  ? "group-hover:border-pitch/40 group-hover:text-pitch/80"
+                  : "group-hover:border-data/40 group-hover:text-data/80"
+              }`}
             >
               {tag}
             </span>

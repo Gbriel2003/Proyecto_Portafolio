@@ -36,6 +36,14 @@ export function Contact() {
     
     const form = e.currentTarget;
     const data = new FormData(form);
+
+    // Antispam: honeypot check (Web3Forms handles botcheck, but front-end drops it as well)
+    const botcheck = data.get("botcheck");
+    if (botcheck) {
+      setIsSubmitting(false);
+      setSent(true); // Silently fake success to trick spam bots
+      return;
+    }
     
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
     if (!accessKey) {
@@ -124,6 +132,16 @@ export function Contact() {
               onSubmit={onSubmit}
               className="space-y-5 rounded-xl border border-line bg-panel p-6 sm:p-8"
             >
+              {/* Web3Forms Antispam Honeypot - hidden from real users */}
+              <input
+                type="checkbox"
+                name="botcheck"
+                className="hidden"
+                style={{ display: "none" }}
+                tabIndex={-1}
+                autoComplete="off"
+              />
+
               <div className="grid gap-5 sm:grid-cols-2">
                 <div>
                   <label htmlFor="contact-name" className="mb-2 block font-mono text-xs uppercase tracking-wider text-muted">
@@ -134,6 +152,7 @@ export function Contact() {
                     type="text"
                     name="name"
                     required
+                    maxLength={100}
                     disabled={isSubmitting}
                     placeholder={t("contact.namePh")}
                     className="w-full rounded-lg border border-line bg-panel2 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted/60 focus:border-pitch focus:ring-4 focus:ring-pitch/10 disabled:opacity-50"
@@ -148,6 +167,7 @@ export function Contact() {
                     type="email"
                     name="email"
                     required
+                    maxLength={150}
                     disabled={isSubmitting}
                     placeholder={t("contact.emailPh")}
                     className="w-full rounded-lg border border-line bg-panel2 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted/60 focus:border-pitch focus:ring-4 focus:ring-pitch/10 disabled:opacity-50"
@@ -163,6 +183,8 @@ export function Contact() {
                   name="message"
                   required
                   rows={6}
+                  minLength={10}
+                  maxLength={3000}
                   disabled={isSubmitting}
                   placeholder={t("contact.messagePh")}
                   className="w-full resize-none rounded-lg border border-line bg-panel2 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted/60 focus:border-pitch focus:ring-4 focus:ring-pitch/10 disabled:opacity-50"

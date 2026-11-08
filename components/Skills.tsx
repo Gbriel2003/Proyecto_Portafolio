@@ -52,7 +52,7 @@ export function Skills() {
           >
             <div className="hidden h-px w-8 bg-pitch/50 sm:block" />
             <span className="font-mono text-xs font-bold tracking-[0.2em] text-pitch uppercase">
-              // {t("skills.tag")}
+              {"// "}{t("skills.tag")}
             </span>
             <div className="hidden h-px w-8 bg-pitch/50 sm:block" />
           </motion.div>
@@ -127,7 +127,7 @@ export function Skills() {
               <div>
                 <div className="mb-3 flex items-center justify-between">
                   <span className="font-mono text-[10px] tracking-widest text-pitch uppercase font-semibold">
-                    0{idx + 1} // DOMAIN
+                    0{idx + 1} {"//"} DOMAIN
                   </span>
                   <div className="h-1.5 w-1.5 rounded-full bg-pitch/70 group-hover:animate-ping" />
                 </div>

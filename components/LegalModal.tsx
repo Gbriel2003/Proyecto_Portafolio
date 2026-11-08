@@ -16,10 +16,12 @@ interface LegalModalProps {
 export function LegalModal({ isOpen, initialTab = "privacy", onClose }: LegalModalProps) {
   const { t, lang } = useLang();
   const [activeTab, setActiveTab] = useState<LegalTab>(initialTab);
+  const [prevInitialTab, setPrevInitialTab] = useState<LegalTab>(initialTab);
 
-  useEffect(() => {
+  if (prevInitialTab !== initialTab) {
+    setPrevInitialTab(initialTab);
     setActiveTab(initialTab);
-  }, [initialTab]);
+  }
 
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {

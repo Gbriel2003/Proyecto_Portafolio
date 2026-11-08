@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useState } from "react";
+import { createContext, useContext, useEffect, useState, useSyncExternalStore } from "react";
 import type { ReactNode } from "react";
 import { translations, type TKey, type Lang } from "./translations";
 
@@ -14,18 +14,39 @@ interface LangContextValue {
 
 const LangContext = createContext<LangContextValue | null>(null);
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es");
+const listeners = new Set<() => void>();
 
-  useEffect(() => {
+function subscribeLang(callback: () => void) {
+  listeners.add(callback);
+  window.addEventListener("storage", callback);
+  return () => {
+    listeners.delete(callback);
+    window.removeEventListener("storage", callback);
+  };
+}
+
+function getLangSnapshot(): Lang {
+  try {
     const stored = window.localStorage.getItem(STORAGE_KEY);
-    if (stored === "es" || stored === "en") {
-      setLangState(stored);
-    } else {
-      const isSpanish = typeof navigator !== "undefined" && navigator.language.toLowerCase().startsWith("es");
-      setLangState(isSpanish ? "es" : "en");
-    }
-  }, []);
+    if (stored === "es" || stored === "en") return stored;
+    return navigator.language.toLowerCase().startsWith("es") ? "es" : "en";
+  } catch {
+    return "es";
+  }
+}
+
+function getServerLangSnapshot(): Lang {
+  return "es";
+}
+
+export function LanguageProvider({ children }: { children: ReactNode }) {
+  const currentLang = useSyncExternalStore(
+    subscribeLang,
+    getLangSnapshot,
+    getServerLangSnapshot
+  );
+  const [overrideLang, setOverrideLang] = useState<Lang | null>(null);
+  const lang = overrideLang ?? currentLang;
 
   useEffect(() => {
     if (typeof document !== "undefined") {
@@ -34,9 +55,12 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   }, [lang]);
 
   const setLang = (l: Lang) => {
-    setLangState(l);
-    if (typeof window !== "undefined") {
+    setOverrideLang(l);
+    try {
       window.localStorage.setItem(STORAGE_KEY, l);
+      listeners.forEach((listener) => listener());
+    } catch {
+      // storage unavailable
     }
   };
 

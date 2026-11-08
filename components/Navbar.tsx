@@ -2,10 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { useLang } from "@/lib/i18n";
-import { profile } from "@/lib/config";
 import { LanguageToggle } from "./LanguageToggle";
 import { ThemeToggle } from "./ThemeToggle";
-import { BoltIcon } from "./icons";
 
 const links = [
   { id: "about", key: "nav.about" },

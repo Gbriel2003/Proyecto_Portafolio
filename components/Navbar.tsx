@@ -54,19 +54,16 @@ export function Navbar() {
 
   return (
     <header
-      className={`fixed inset-x-0 z-50 flex flex-col items-center transition-all duration-500 ${
-        scrolled ? "top-4 sm:top-6 px-4" : "top-0 px-4 sm:px-8"
+      className={`fixed top-0 inset-x-0 z-50 flex flex-col items-center transition-all duration-300 ${
+        scrolled
+          ? "border-b border-line bg-panel/85 py-3 shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)] backdrop-blur-xl"
+          : "border-b border-transparent bg-transparent py-5"
       }`}
     >
       <nav
         aria-label="Navegación principal"
-        className={`flex items-center justify-center gap-2 sm:gap-4 transition-all duration-500 ${
-          scrolled
-            ? "w-[95%] md:w-auto rounded-full border border-line px-4 sm:px-6 py-2.5 shadow-[0_10px_40px_-10px_rgb(var(--glow)/0.15)] bg-panel/95 backdrop-blur-xl ring-1 ring-pitch/10"
-            : "w-full max-w-[110rem] py-5 border border-transparent bg-transparent"
-        }`}
+        className="container-x flex w-full items-center justify-between md:justify-center"
       >
-
         <div className="hidden items-center gap-6 md:flex">
           {links.map((l) => {
             const isActive = activeSection === l.id;

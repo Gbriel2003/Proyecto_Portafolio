@@ -7,6 +7,7 @@ import { useLang } from "@/lib/i18n";
 import { profile } from "@/lib/config";
 import { Section } from "./Section";
 import { GithubIcon, LinkedinIcon, MailIcon, ArrowIcon } from "./icons";
+import { LegalModal } from "./LegalModal";
 
 export function Contact() {
   const { t } = useLang();
@@ -14,6 +15,8 @@ export function Contact() {
   const [sent, setSent] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [errorMsg, setErrorMsg] = useState("");
+  const [isLegalOpen, setIsLegalOpen] = useState(false);
+  const [consentAccepted, setConsentAccepted] = useState(false);
 
   const copyEmail = () => {
     navigator.clipboard.writeText(profile.email);
@@ -23,6 +26,11 @@ export function Contact() {
 
   const onSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    if (!consentAccepted) {
+      setErrorMsg(t("contact.consent") + " " + t("contact.privacyPolicy"));
+      return;
+    }
+
     setIsSubmitting(true);
     setErrorMsg("");
     
@@ -31,7 +39,7 @@ export function Contact() {
     
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
     if (!accessKey) {
-      setErrorMsg("Falta el Access Key de configuración.");
+      setErrorMsg(t("contact.errKey"));
       setIsSubmitting(false);
       return;
     }
@@ -48,10 +56,10 @@ export function Contact() {
         setSent(true);
       } else {
         const errorData = await response.json();
-        setErrorMsg(errorData.message || "El servidor rechazó el mensaje.");
+        setErrorMsg(errorData.message || t("contact.errServer"));
       }
-    } catch (error) {
-      setErrorMsg("Error de conexión. Revisa tu internet.");
+    } catch {
+      setErrorMsg(t("contact.errNet"));
     } finally {
       setIsSubmitting(false);
     }
@@ -160,9 +168,41 @@ export function Contact() {
                   className="w-full resize-none rounded-lg border border-line bg-panel2 px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted/60 focus:border-pitch focus:ring-4 focus:ring-pitch/10 disabled:opacity-50"
                 />
               </div>
+
+              {/* RGPD Compliance: Consent Checkbox */}
+              <div className="flex items-start gap-2.5 pt-1">
+                <input
+                  id="contact-consent"
+                  type="checkbox"
+                  name="privacy_consent"
+                  checked={consentAccepted}
+                  onChange={(e) => setConsentAccepted(e.target.checked)}
+                  required
+                  disabled={isSubmitting}
+                  className="mt-1 h-4 w-4 rounded border-line bg-panel2 text-pitch focus:ring-pitch focus:ring-offset-panel"
+                />
+                <label htmlFor="contact-consent" className="text-xs text-muted leading-relaxed">
+                  {t("contact.consent")}{" "}
+                  <button
+                    type="button"
+                    onClick={() => setIsLegalOpen(true)}
+                    className="font-medium text-pitch underline underline-offset-2 hover:text-pitch/80 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-pitch"
+                  >
+                    {t("contact.privacyPolicy")}
+                  </button>
+                  .
+                </label>
+              </div>
+
+              {/* First-layer Legal Disclaimer */}
+              <p className="font-mono text-[10px] text-muted/70 leading-relaxed border-t border-line/40 pt-2">
+                {t("contact.legalNotice")}
+              </p>
               
               {errorMsg && (
-                <p className="text-sm font-medium text-danger">{errorMsg}</p>
+                <div role="alert" aria-live="polite" className="rounded-lg border border-danger/40 bg-danger/10 p-3 text-xs font-medium text-danger">
+                  {errorMsg}
+                </div>
               )}
 
               <button
@@ -172,8 +212,8 @@ export function Contact() {
               >
                 {isSubmitting ? (
                   <>
-                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent"></span>
-                    Enviando...
+                    <span className="h-4 w-4 animate-spin rounded-full border-2 border-background border-t-transparent" aria-hidden="true"></span>
+                    {t("contact.sending")}
                   </>
                 ) : (
                   <>
@@ -186,6 +226,12 @@ export function Contact() {
           )}
         </motion.div>
       </div>
+
+      <LegalModal
+        isOpen={isLegalOpen}
+        initialTab="privacy"
+        onClose={() => setIsLegalOpen(false)}
+      />
 
       <AnimatePresence>
         {copied && (

@@ -144,7 +144,7 @@ export function ProjectLightbox({ project, onClose }: ProjectLightboxProps) {
               <div
                 onClick={() => setIsZoomed((z) => !z)}
                 title={isZoomed ? t("projects.zoomOut") : t("projects.zoomIn")}
-                className={`relative h-[50vh] min-h-[350px] sm:h-[64vh] sm:min-h-[500px] w-full transition-all duration-300 ${
+                className={`relative h-[50vh] min-h-87.5 sm:h-[64vh] sm:min-h-125 w-full transition-all duration-300 ${
                   isZoomed
                     ? "cursor-zoom-out min-w-[175%] min-h-[175%]"
                     : "cursor-zoom-in"

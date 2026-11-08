@@ -2,12 +2,17 @@
 
 import { useState } from "react";
 import type { FormEvent } from "react";
+import dynamic from "next/dynamic";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/lib/i18n";
 import { profile } from "@/lib/config";
 import { Section } from "./Section";
 import { GithubIcon, LinkedinIcon, MailIcon, ArrowIcon } from "./icons";
-import { LegalModal } from "./LegalModal";
+
+const LegalModal = dynamic(
+  () => import("./LegalModal").then((mod) => mod.LegalModal),
+  { ssr: false }
+);
 
 export function Contact() {
   const { t } = useLang();

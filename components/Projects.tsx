@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useLang } from "@/lib/i18n";
@@ -8,8 +9,12 @@ import { projects } from "@/lib/content";
 import type { Project } from "@/lib/content";
 import { profile } from "@/lib/config";
 import { Section } from "./Section";
-import { ProjectLightbox } from "./ProjectLightbox";
 import { ExternalIcon, CodeIcon, ArrowIcon, ZoomIcon, ExpandIcon } from "./icons";
+
+const ProjectLightbox = dynamic(
+  () => import("./ProjectLightbox").then((mod) => mod.ProjectLightbox),
+  { ssr: false }
+);
 
 function ProjectCard({
   project,

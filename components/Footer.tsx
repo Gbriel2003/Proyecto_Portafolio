@@ -1,10 +1,16 @@
 "use client";
 
 import { useState } from "react";
+import dynamic from "next/dynamic";
 import { useLang } from "@/lib/i18n";
 import { profile } from "@/lib/config";
 import { GithubIcon, LinkedinIcon, MailIcon } from "./icons";
-import { LegalModal, type LegalTab } from "./LegalModal";
+import type { LegalTab } from "./LegalModal";
+
+const LegalModal = dynamic(
+  () => import("./LegalModal").then((mod) => mod.LegalModal),
+  { ssr: false }
+);
 
 export function Footer() {
   const { t } = useLang();

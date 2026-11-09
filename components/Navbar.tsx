@@ -2,8 +2,10 @@
 
 import { useEffect, useState } from "react";
 import { useLang } from "@/lib/i18n";
+import { profile } from "@/lib/config";
 import { LanguageToggle } from "./LanguageToggle";
 import { ThemeToggle } from "./ThemeToggle";
+import { DownloadIcon } from "./icons";
 
 const links = [
   { id: "about", key: "nav.about" },
@@ -138,6 +140,19 @@ export function Navbar() {
                 </a>
               );
             })}
+            <div className="mt-1 border-t border-line/60 px-5 pt-3 pb-1">
+              <a
+                href={profile.resume}
+                download="Gabriel_Cardona_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setOpen(false)}
+                className="flex items-center justify-center gap-2 rounded-lg border border-pitch/40 bg-pitch/10 px-4 py-2.5 text-xs font-semibold text-pitch transition-all hover:bg-pitch hover:text-background"
+              >
+                <DownloadIcon className="h-4 w-4" />
+                {t("hero.ctaResume")}
+              </a>
+            </div>
           </div>
         </div>
       ) : null}

@@ -42,7 +42,7 @@ export function About() {
 
             <a
               href={profile.resume}
-              download
+              download="Gabriel_Cardona_CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="mt-8 inline-flex items-center gap-2 rounded-lg border border-pitch/50 bg-panel px-5 py-3 text-sm font-semibold text-pitch transition-all hover:bg-pitch hover:text-background"

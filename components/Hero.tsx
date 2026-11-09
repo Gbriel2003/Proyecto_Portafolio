@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useLang } from "@/lib/i18n";
 import { profile } from "@/lib/config";
-import { GithubIcon, LinkedinIcon, MailIcon, ArrowIcon, MapPinIcon } from "./icons";
+import { GithubIcon, LinkedinIcon, MailIcon, ArrowIcon, MapPinIcon, DownloadIcon } from "./icons";
 
 function useTypewriter(words: string[], typeMs = 65, deleteMs = 35, holdMs = 1800) {
   const [text, setText] = useState("");
@@ -110,6 +110,16 @@ export function Hero() {
               >
                 {t("hero.ctaProjects")}
                 <ArrowIcon className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <a
+                href={profile.resume}
+                download="Gabriel_Cardona_CV.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group inline-flex items-center gap-2 rounded-lg border border-pitch/50 bg-pitch/5 px-6 py-3.5 text-sm font-semibold text-pitch outline-none transition-all hover:scale-[1.02] hover:bg-pitch hover:text-background hover:shadow-[0_0_30px_-5px_rgb(var(--glow)/0.3)] focus-visible:ring-2 focus-visible:ring-pitch"
+              >
+                <DownloadIcon className="h-4 w-4 transition-transform group-hover:-translate-y-0.5" />
+                {t("hero.ctaResume")}
               </a>
               <a
                 href="#contact"

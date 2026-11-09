@@ -28,6 +28,6 @@ export const profile = {
   location: "Margarita / Remote · Worldwide",
   github: "https://github.com/Gbriel2003",
   linkedin: "https://www.linkedin.com/in/gabriel-cardona-b57986115",
-  resume: "/resume.pdf",
+  resume: "/Gabriel_Cardona_CV.pdf",
 };
 
